@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+.space-container {
+  background-image: url('./BackgroundSpace.png'); 
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-color: black;
+  cursor: crosshair; 
+}
+
+.space-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.top-ui {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px; 
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    z-index: 10; 
+}
+
+.logo {
+    width: 250px; 
+    height: auto;
+    pointer-events: none; 
+}
+
+.returnButton {
+  background: linear-gradient(90deg, #004d99, #007bff);
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 123, 255, 0.4);
+  transition: transform 0.2s, box-shadow 0.2s;
+  margin-right: 50px;
+}
+
+
+.returnButton:hover {
+    background: linear-gradient(90deg, #003366, #0056b3);
+    transform: translateY(-2px); 
+    box-shadow: 0 6px 20px rgba(0, 123, 255, 0.6);
+}
+
+.rocket {
+  position: absolute;
+  width: 100px; 
+  height: auto;
+  z-index: 2;
+}
+
+.planet {
+    position: absolute;
+    width: 200px; 
+    height: auto;
+    z-index: 1;
+    animation: pulse 5s infinite alternate; 
+    pointer-events: none; 
+}
+
+/* 1. Posicionamento (mantido do último passo) */
+.cardPergunta {
+  position: absolute; 
+  bottom: 20px; 
+  left: 20px; 
+  z-index: 100; 
+
+  /* 2. Estilo base para o card simples (ajuste as cores) */
+  width: 250px; 
+  padding: 15px;
+  border-radius: 8px;
+  background-color: rgba(30, 30, 50, 0.9); /* Fundo escuro semi-transparente */
+  color: #fff;
+  border: 2px solid transparent; /* Borda padrão */
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.cardPergunta:hover {
+  background-color: rgba(40, 40, 70, 0.95);
+}
+
+/* Estilo para a tag "Basic" */
+.card-tag {
+  display: inline-block;
+  background-color: #007bff; /* Cor de destaque para a tag */
+  color: white;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.8em;
+  margin-bottom: 5px;
+}
+
+/* Estilo para a seleção (isHighlight/isSelected) */
+.cardPergunta.card-selected {
+  border-color: #4CAF50; /* Borda verde para indicar seleção/destaque */
+  box-shadow: 0 0 10px #4CAF50;
+}
+
+@keyframes pulse {
+    from {
+        transform: scale(1);
+        opacity: 0.9;
+    }
+    to {
+        transform: scale(1.05);
+        opacity: 1;
+    }
+}
