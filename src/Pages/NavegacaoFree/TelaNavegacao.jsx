@@ -3,8 +3,6 @@ import { useNavigate } from "react-router-dom"
 import "./TelaNavegacao.css"
 import Modal from "./Modal"
 import ModalDois from "./ModalDois"
-// 🛑 CORREÇÃO PRINCIPAL: REMOVIDA A LINHA ABAIXO QUE CAUSAVA O ERRO "Module not found"
-// import Card from './components/Card' 
 
 const PLANETS = [
   { id: 1, name: "Nebula Prime", src: "/planetavermelho.png", relativeX: 100, relativeY: 150 }, 
@@ -31,8 +29,7 @@ function TelaNavegacao() {
     y: window.innerHeight / 2 - ROCKET_SIZE / 2,
   })
 
-  // 🟢 Adicionei o estado necessário para o card (assumindo que estava faltando)
-  const [selectedCard, setSelectedCard] = useState("Free Explorer"); 
+  const [selectedCard, setSelectedCard] = useState("Simple Exploration"); 
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalContent, setModalContent] = useState({});
@@ -104,7 +101,7 @@ function TelaNavegacao() {
   const closeModal = () => setIsModalOpen(false)
   const closeModalDois = () => setIsModalDoisOpen(false)
 
-  const isCardSelected = selectedCard === "Free Explorer";
+  const isCardSelected = selectedCard === "Simple Exploration";
 
   return (
     <div className="space-container" onClick={handleSpaceClick}>
@@ -124,12 +121,15 @@ function TelaNavegacao() {
       </Modal>
 
       <ModalDois isOpen={isModalDoisOpen} onClose={closeModalDois} />
-
-      {/* 🟢 CORRIGIDO: Removida a div aninhada e simplificado para um card simples */}
       <div 
         className={`cardPergunta ${isCardSelected ? 'card-selected' : ''}`}
-        onClick={() => handleStartExploring("Free Explorer", "/rota-free")}
+        onClick={() => handleStartExploring("Simple Exploration", "/rota-free")}
       >
+      </div>
+
+      <div className="quadro" role="region" aria-label="Quadro branco com três frases">
+        <p className="frase"> O que é um exoplaneta ?</p>
+        <p className="frase">Exoplaneta é um planeta que fica fora do nosso Sistema Solar, ou seja, ele gira em torno de outra estrela diferente do Sol.</p>
       </div>
     </div>
   )
