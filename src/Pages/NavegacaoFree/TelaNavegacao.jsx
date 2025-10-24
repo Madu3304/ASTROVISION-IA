@@ -123,13 +123,12 @@ function TelaNavegacao() {
       <ModalDois isOpen={isModalDoisOpen} onClose={closeModalDois} />
       <div 
         className={`cardPergunta ${isCardSelected ? 'card-selected' : ''}`}
-        onClick={() => handleStartExploring("Simple Exploration", "/rota-free")}
-      >
+        onClick={() => handleStartExploring("Simple Exploration", "/rota-free")}>
       </div>
 
-      <div className="quadro" role="region" aria-label="Quadro branco com três frases">
-        <p className="frase"> O que é um exoplaneta ?</p>
-        <p className="frase">Exoplaneta é um planeta que fica fora do nosso Sistema Solar, ou seja, ele gira em torno de outra estrela diferente do Sol.</p>
+      <div className="quadroQuis" role="region" aria-label="Quadro branco com três frases">
+        <p className="frase"> What is an exoplanet? ?</p>
+        <p className="frase">An exoplanet is a planet that is outside our Solar System, that is, it revolves around a star other than the Sun.</p>
       </div>
     </div>
   )

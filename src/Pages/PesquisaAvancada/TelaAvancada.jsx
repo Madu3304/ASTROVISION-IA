@@ -8,7 +8,7 @@ const Card = ({ title, description, isSelected = false, onClick }) => (
     onClick={onClick}
   >
     <div className="cardzinho">
-      <p className="step-title">Step 1 of 2</p>
+      <p className="title">Step 1 of 2</p>
       <div className="upload-section">
         <span className="uploadzinho">🔍</span>
         <h2 className="cardTitle">{title}</h2>
@@ -16,7 +16,7 @@ const Card = ({ title, description, isSelected = false, onClick }) => (
       <p className="Descricaozinha">{description}</p>
     </div>
     
-    <div className="upload-area">
+    <div className="upload">
       <span className="uploadzinhooo">📄</span>
       <p>Upload & analyze</p>
     </div>

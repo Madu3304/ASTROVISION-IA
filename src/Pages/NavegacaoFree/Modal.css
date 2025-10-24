@@ -15,9 +15,9 @@
 
 .modalGrande {
   position: relative; 
-  width: 70%;
-  max-width: 900px;
-  height: 75%;
+  width: 60%;
+  max-width: 800px;
+  height: 70%;
   padding: 40px;
   border-radius: 20px;
   box-shadow: 0 8px 25px rgba(0,0,0,0.4);
@@ -46,13 +46,30 @@
   margin-bottom: 10px;
 }
 
-.modal-body {
+/* .modal-body {
   font-size: 1.2rem;
   margin-bottom: 30px;
   align-items: flex-start; 
+} */
+.modalTexto {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  margin-left: 15px; 
+  text-align: left;       
+  display: flex;     
+  align-items: flex-start; 
 }
 
-.modal-close {
+/* .modalTexto {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  margin-left: 15px;
+  margin-right: 15px;
+  text-align: left;
+  line-height: 1.5;
+} */
+
+.fechaModal {
   background: linear-gradient(90deg, #004d99, #007bff);
   color: white;
   border: none;
@@ -66,16 +83,16 @@
 }
 
 .astronauta {
-  position: absolute;
-  bottom: 15px;
+  /* position: relative;     */
+  bottom: 12px;
   right: 8px;   
-  width: 300px; 
-  height: auto;
+  width: 100px; 
+  /* height: auto; */
   pointer-events: none; 
   z-index: 10;          
 }
 
-.modal-close:hover {
+.fechaModal:hover {
   transform: scale(1.05);
   box-shadow: 0 4px 12px rgba(0, 123, 255, 0.4);
 }

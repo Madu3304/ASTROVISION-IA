@@ -1,6 +1,7 @@
-import React, { useState } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import { useNavigate } from 'react-router-dom'
-import './MenuPrincipal.css'
+import "./MenuPrincipal.css"
+import CuriosidadeModal from "./CuriosidadeModal"
 
 const Card = ({ title, tag, description, imageUrl, isHighlight = false, isSelected = false, onClick }) => (
   <div 
@@ -15,8 +16,7 @@ const Card = ({ title, tag, description, imageUrl, isHighlight = false, isSelect
         onClick={(e) => {
           e.stopPropagation()
           alert(`${tag} plan selected!`)
-        }}
-      >
+        }}>
         {tag}
       </button>
     </div>
@@ -32,6 +32,9 @@ const Card = ({ title, tag, description, imageUrl, isHighlight = false, isSelect
 function MenuPrincipal() {
   const navigate = useNavigate();
   const [selectedCard, setSelectedCard] = useState(null);
+  const [isCuriosidadeModalOpen, setIsCuriosidadeModalOpen] = useState(false)
+  const [modalContent, setModalContent] = useState({})
+  const closeCuriosidadeModal = () => setIsCuriosidadeModalOpen(false)
 
   const handleCardClick = (cardTitle, routePath) => {
     setSelectedCard(cardTitle);
@@ -39,13 +42,27 @@ function MenuPrincipal() {
       navigate('../TelaAvancada')
     }, 300)
   }
-    const handleStartExploring = () => {
+    
+  const handleStartExploring = () => {
       navigate('../TelaNavegacao')
-    }
+  }
+
+  const openCuriosidadeModal = () => {
+    setModalContent({
+      title: "Space Curiosity 🚀",
+      body: "Did you know that Mars has the highest mountain in the Solar System?"
+    })
+    setIsCuriosidadeModalOpen(true)
+  }
 
 return (
   <div className="fundoContainer">
     <h1 className="tituloPrincipal">Choose your mission and explore the universe 🌌</h1>
+      <button className="btnCuriosidade" onClick={openCuriosidadeModal}> Curiosity </button>
+
+      <CuriosidadeModal isOpen={isCuriosidadeModalOpen} onClose={closeCuriosidadeModal} title={modalContent.title} >
+        <p>{modalContent.body}</p> </CuriosidadeModal>
+
     <div className="cardContainerzinho">
       <Card
         title="Free Explorer"

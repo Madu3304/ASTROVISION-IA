@@ -103,7 +103,7 @@
   margin-bottom: 5px;
 }
 
-.quadro {
+.quadroQuis {
   position: fixed; 
   left: 20px; 
   bottom: 20px; 
@@ -118,7 +118,7 @@
   font-family: Inter, Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
-.quadro .frase {
+.quadroQuis .frase {
   margin: 6px 0;
   font-size: 14px;
   line-height: 1.3;
