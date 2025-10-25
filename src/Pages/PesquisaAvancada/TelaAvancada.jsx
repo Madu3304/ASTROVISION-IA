@@ -32,6 +32,15 @@ const ReturnButton = () => {
   )
 }
 
+const UpdateButton = () => {
+  const navigate = useNavigate()
+  return (
+    <button className="Buttonzito" onClick={() => navigate("/MenuPrincipal")}>
+      Upload & analyze
+    </button>
+  )
+}
+
 function TelaAvancada() {
   const navigate = useNavigate();
   const [selectedCard, setSelectedCard] = useState(null)
@@ -47,7 +56,17 @@ function TelaAvancada() {
         <img src="/logo2 (1).svg" alt="Logo" className="logo" />
         <ReturnButton />
       </div>
+
       <img src="../Nave_avançada.png" alt="Rocket" className="navezinho" />
+      <div className="quadro">
+        <h2 className="modalTitleOne">🔍 Upload your data set</h2>
+        <h3 className="modalTitle">
+          Upload a CSV file with star or light-curve data and let our AI co-pilot analyze it.</h3>
+        <p className="modalTitle">
+          Your ship will jump to the detected location in space, where the system will indentify and classify the object as planet or not.
+        </p>
+        <UpdateButton />
+      </div>
     </div>
   )
 }
